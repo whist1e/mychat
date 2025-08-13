@@ -1,0 +1,2 @@
+{"level":"fatal","ts":"2025-08-13T11:41:26.514+0800","msg":"Failed to connect to database: Error 1049 (42000): Unknown database 'mychat'","func":"zaplog.Fatalf","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":124}
+{"level":"info","ts":"2025-08-13T11:45:40.388+0800","msg":"Database connected and migrated successfully","func":"dao.init.0","file":"/Users/mac/project/mychat/backend/internal/dao/gorm.go","line":39}
