@@ -1,2 +1,202 @@
 {"level":"fatal","ts":"2025-08-13T11:41:26.514+0800","msg":"Failed to connect to database: Error 1049 (42000): Unknown database 'mychat'","func":"zaplog.Fatalf","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":124}
 {"level":"info","ts":"2025-08-13T11:45:40.388+0800","msg":"Database connected and migrated successfully","func":"dao.init.0","file":"/Users/mac/project/mychat/backend/internal/dao/gorm.go","line":39}
+{"level":"info","ts":"2025-08-15T15:54:03.894+0800","msg":"Database connected and migrated successfully","func":"dao.init.0","file":"/Users/mac/project/mychat/backend/internal/dao/gorm.go","line":71}
+{"level":"info","ts":"2025-08-15T15:54:16.142+0800","msg":"Database connected and migrated successfully","func":"dao.init.0","file":"/Users/mac/project/mychat/backend/internal/dao/gorm.go","line":71}
+{"level":"error","ts":"2025-08-15T15:54:17.367+0800","msg":"创建用户失败: Error 1406 (22001): Data too long for column 'uuid' at row 1","func":"api.Register","file":"/Users/mac/project/mychat/backend/api/user_info_controller.go","line":24}
+{"level":"error","ts":"2025-08-15T15:54:17.367+0800","msg":"用户不存在","func":"api.Login","file":"/Users/mac/project/mychat/backend/api/user_info_controller.go","line":43}
+{"level":"info","ts":"2025-08-15T16:02:21.418+0800","msg":"Database connected and migrated successfully","func":"dao.init.0","file":"/Users/mac/project/mychat/backend/internal/dao/gorm.go","line":71}
+{"level":"info","ts":"2025-08-15T16:25:55.875+0800","msg":"Database connected and migrated successfully","func":"dao.init.0","file":"/Users/mac/project/mychat/backend/internal/dao/gorm.go","line":71}
+{"level":"fatal","ts":"2025-08-15T16:25:55.876+0800","msg":"服务器启动失败: listen tcp 0.0.0.0:8000: bind: address already in use","func":"zaplog.Fatalf","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":124}
+{"level":"info","ts":"2025-08-15T16:26:24.828+0800","msg":"Database connected and migrated successfully","func":"dao.init.0","file":"/Users/mac/project/mychat/backend/internal/dao/gorm.go","line":71}
+{"level":"info","ts":"2025-08-15T16:34:44.239+0800","msg":"Database connected and migrated successfully","func":"dao.init.0","file":"/Users/mac/project/mychat/backend/internal/dao/gorm.go","line":71}
+{"level":"info","ts":"2025-08-15T17:39:04.127+0800","msg":"Database connected and migrated successfully","func":"dao.init.0","file":"/Users/mac/project/mychat/backend/internal/dao/gorm.go","line":71}
+{"level":"info","ts":"2025-08-15T17:39:04.128+0800","msg":"=== MyChat Backend 服务器启动 ===","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":12}
+{"level":"info","ts":"2025-08-15T17:39:04.128+0800","msg":"1. 加载配置文件...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":15}
+{"level":"info","ts":"2025-08-15T17:39:04.129+0800","msg":"✅ 配置文件加载成功","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":19}
+{"level":"info","ts":"2025-08-15T17:39:04.129+0800","msg":"2. 初始化日志系统...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":22}
+{"level":"info","ts":"2025-08-15T17:39:04.129+0800","msg":"✅ 日志系统初始化成功","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":24}
+{"level":"info","ts":"2025-08-15T17:39:04.129+0800","msg":"3. 启动HTTP服务器...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":27}
+{"level":"info","ts":"2025-08-15T17:39:04.129+0800","msg":"🚀 服务器启动成功！监听地址: 0.0.0.0:8000","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-15T17:39:04.129+0800","msg":"📱 注册接口: POST http://0.0.0.0:8000/register","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-15T17:39:04.129+0800","msg":"🔐 登录接口: POST http://0.0.0.0:8000/login","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-15T17:39:04.129+0800","msg":"💡 提示: 使用Postman测试接口功能","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":35}
+{"level":"info","ts":"2025-08-15T17:39:04.129+0800","msg":"按 Ctrl+C 停止服务器","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":36}
+{"level":"info","ts":"2025-08-15T22:04:42.486+0800","msg":"Database connected and migrated successfully","func":"dao.init.0","file":"/Users/mac/project/mychat/backend/internal/dao/gorm.go","line":71}
+{"level":"info","ts":"2025-08-15T22:04:42.487+0800","msg":"=== MyChat Backend 服务器启动 ===","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":12}
+{"level":"info","ts":"2025-08-15T22:04:42.487+0800","msg":"1. 加载配置文件...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":15}
+{"level":"info","ts":"2025-08-15T22:04:42.487+0800","msg":"✅ 配置文件加载成功","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":19}
+{"level":"info","ts":"2025-08-15T22:04:42.487+0800","msg":"2. 初始化日志系统...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":22}
+{"level":"info","ts":"2025-08-15T22:04:42.487+0800","msg":"✅ 日志系统初始化成功","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":24}
+{"level":"info","ts":"2025-08-15T22:04:42.487+0800","msg":"3. 启动HTTP服务器...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":27}
+{"level":"info","ts":"2025-08-15T22:04:42.487+0800","msg":"🚀 服务器启动成功！监听地址: 0.0.0.0:8000","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-15T22:04:42.487+0800","msg":"📱 注册接口: POST http://0.0.0.0:8000/register","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-15T22:04:42.487+0800","msg":"🔐 登录接口: POST http://0.0.0.0:8000/login","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-15T22:04:42.487+0800","msg":"💡 提示: 使用Postman测试接口功能","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":35}
+{"level":"info","ts":"2025-08-15T22:04:42.487+0800","msg":"按 Ctrl+C 停止服务器","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":36}
+{"level":"error","ts":"2025-08-15T22:06:55.313+0800","msg":"创建用户失败: Error 1406 (22001): Data too long for column 'uuid' at row 1","func":"api.Register","file":"/Users/mac/project/mychat/backend/api/user_info_controller.go","line":24}
+{"level":"error","ts":"2025-08-15T22:08:06.017+0800","msg":"invalid character '}' looking for beginning of object key string","func":"api.Login","file":"/Users/mac/project/mychat/backend/api/user_info_controller.go","line":35}
+{"level":"error","ts":"2025-08-15T22:08:09.711+0800","msg":"invalid character '}' looking for beginning of object key string","func":"api.Login","file":"/Users/mac/project/mychat/backend/api/user_info_controller.go","line":35}
+{"level":"error","ts":"2025-08-15T22:08:48.790+0800","msg":"用户不存在","func":"api.Login","file":"/Users/mac/project/mychat/backend/api/user_info_controller.go","line":43}
+{"level":"error","ts":"2025-08-15T22:10:05.359+0800","msg":"创建用户失败: Error 1406 (22001): Data too long for column 'uuid' at row 1","func":"api.Register","file":"/Users/mac/project/mychat/backend/api/user_info_controller.go","line":24}
+{"level":"info","ts":"2025-08-18T10:47:31.529+0800","msg":"Database connected and migrated successfully","func":"dao.init.0","file":"/Users/mac/project/mychat/backend/internal/dao/gorm.go","line":71}
+{"level":"info","ts":"2025-08-18T10:47:31.530+0800","msg":"=== MyChat Backend 服务器启动 ===","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":12}
+{"level":"info","ts":"2025-08-18T10:47:31.530+0800","msg":"1. 加载配置文件...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":15}
+{"level":"info","ts":"2025-08-18T10:47:31.531+0800","msg":"✅ 配置文件加载成功","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":19}
+{"level":"info","ts":"2025-08-18T10:47:31.531+0800","msg":"2. 初始化日志系统...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":22}
+{"level":"info","ts":"2025-08-18T10:47:31.531+0800","msg":"✅ 日志系统初始化成功","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":24}
+{"level":"info","ts":"2025-08-18T10:47:31.531+0800","msg":"3. 启动HTTP服务器...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":27}
+{"level":"info","ts":"2025-08-18T10:47:31.531+0800","msg":"🚀 服务器启动成功！监听地址: 0.0.0.0:8000","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-18T10:47:31.531+0800","msg":"📱 注册接口: POST http://0.0.0.0:8000/register","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-18T10:47:31.531+0800","msg":"🔐 登录接口: POST http://0.0.0.0:8000/login","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-18T10:47:31.531+0800","msg":"💡 提示: 使用Postman测试接口功能","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":35}
+{"level":"info","ts":"2025-08-18T10:47:31.531+0800","msg":"按 Ctrl+C 停止服务器","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":36}
+{"level":"error","ts":"2025-08-18T10:48:24.962+0800","msg":"创建用户失败: Error 1406 (22001): Data too long for column 'password' at row 1","func":"api.Register","file":"/Users/mac/project/mychat/backend/api/user_info_controller.go","line":24}
+{"level":"info","ts":"2025-08-18T14:53:53.679+0800","msg":"Database connected and migrated successfully","func":"dao.init.0","file":"/Users/mac/project/mychat/backend/internal/dao/gorm.go","line":71}
+{"level":"info","ts":"2025-08-18T14:53:53.680+0800","msg":"=== MyChat Backend 服务器启动 ===","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":12}
+{"level":"info","ts":"2025-08-18T14:53:53.680+0800","msg":"1. 加载配置文件...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":15}
+{"level":"info","ts":"2025-08-18T14:53:53.680+0800","msg":"✅ 配置文件加载成功","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":19}
+{"level":"info","ts":"2025-08-18T14:53:53.680+0800","msg":"2. 初始化日志系统...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":22}
+{"level":"info","ts":"2025-08-18T14:53:53.680+0800","msg":"✅ 日志系统初始化成功","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":24}
+{"level":"info","ts":"2025-08-18T14:53:53.680+0800","msg":"3. 启动HTTP服务器...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":27}
+{"level":"info","ts":"2025-08-18T14:53:53.680+0800","msg":"🚀 服务器启动成功！监听地址: 0.0.0.0:8000","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-18T14:53:53.680+0800","msg":"📱 注册接口: POST http://0.0.0.0:8000/register","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-18T14:53:53.680+0800","msg":"🔐 登录接口: POST http://0.0.0.0:8000/login","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-18T14:53:53.680+0800","msg":"💡 提示: 使用Postman测试接口功能","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":35}
+{"level":"info","ts":"2025-08-18T14:53:53.680+0800","msg":"按 Ctrl+C 停止服务器","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":36}
+{"level":"fatal","ts":"2025-08-18T16:22:58.409+0800","msg":"Failed to auto migrate database: Error 1265 (01000): Data truncated for column 'password' at row 1","func":"zaplog.Fatalf","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":124}
+{"level":"error","ts":"2025-08-18T16:23:03.951+0800","msg":"手机号已存在","func":"api.Register","file":"/Users/mac/project/mychat/backend/api/user_info_controller.go","line":24}
+{"level":"error","ts":"2025-08-18T16:23:07.771+0800","msg":"Key: 'SmsLoginRequest.SmsCode' Error:Field validation for 'SmsCode' failed on the 'required' tag","func":"api.Login","file":"/Users/mac/project/mychat/backend/api/user_info_controller.go","line":35}
+{"level":"fatal","ts":"2025-08-18T16:24:16.347+0800","msg":"Failed to auto migrate database: Error 1265 (01000): Data truncated for column 'password' at row 1","func":"zaplog.Fatalf","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":124}
+{"level":"error","ts":"2025-08-18T16:24:17.849+0800","msg":"Key: 'SmsLoginRequest.SmsCode' Error:Field validation for 'SmsCode' failed on the 'required' tag","func":"api.Login","file":"/Users/mac/project/mychat/backend/api/user_info_controller.go","line":35}
+{"level":"error","ts":"2025-08-18T16:24:43.512+0800","msg":"Key: 'SmsLoginRequest.SmsCode' Error:Field validation for 'SmsCode' failed on the 'required' tag","func":"api.Login","file":"/Users/mac/project/mychat/backend/api/user_info_controller.go","line":35}
+{"level":"error","ts":"2025-08-18T16:25:11.546+0800","msg":"Key: 'SmsLoginRequest.SmsCode' Error:Field validation for 'SmsCode' failed on the 'required' tag","func":"api.Login","file":"/Users/mac/project/mychat/backend/api/user_info_controller.go","line":35}
+{"level":"error","ts":"2025-08-18T16:25:24.439+0800","msg":"Key: 'SmsLoginRequest.SmsCode' Error:Field validation for 'SmsCode' failed on the 'required' tag","func":"api.Login","file":"/Users/mac/project/mychat/backend/api/user_info_controller.go","line":35}
+{"level":"error","ts":"2025-08-18T16:27:34.790+0800","msg":"Key: 'SmsLoginRequest.SmsCode' Error:Field validation for 'SmsCode' failed on the 'required' tag","func":"api.Login","file":"/Users/mac/project/mychat/backend/api/user_info_controller.go","line":35}
+{"level":"fatal","ts":"2025-08-18T16:28:15.767+0800","msg":"Failed to auto migrate database: Error 1265 (01000): Data truncated for column 'password' at row 1","func":"zaplog.Fatalf","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":124}
+{"level":"error","ts":"2025-08-18T16:28:30.312+0800","msg":"Key: 'SmsLoginRequest.SmsCode' Error:Field validation for 'SmsCode' failed on the 'required' tag","func":"api.Login","file":"/Users/mac/project/mychat/backend/api/user_info_controller.go","line":35}
+{"level":"error","ts":"2025-08-18T16:29:01.754+0800","msg":"Key: 'SmsLoginRequest.SmsCode' Error:Field validation for 'SmsCode' failed on the 'required' tag","func":"api.Login","file":"/Users/mac/project/mychat/backend/api/user_info_controller.go","line":35}
+{"level":"error","ts":"2025-08-18T16:29:30.620+0800","msg":"Key: 'SmsLoginRequest.SmsCode' Error:Field validation for 'SmsCode' failed on the 'required' tag","func":"api.Login","file":"/Users/mac/project/mychat/backend/api/user_info_controller.go","line":35}
+{"level":"fatal","ts":"2025-08-18T16:33:13.407+0800","msg":"Failed to auto migrate database: Error 1265 (01000): Data truncated for column 'password' at row 1","func":"zaplog.Fatalf","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":124}
+{"level":"error","ts":"2025-08-18T16:35:51.001+0800","msg":"Key: 'SmsLoginRequest.SmsCode' Error:Field validation for 'SmsCode' failed on the 'required' tag","func":"api.Login","file":"/Users/mac/project/mychat/backend/api/user_info_controller.go","line":35}
+{"level":"error","ts":"2025-08-18T16:36:21.706+0800","msg":"Key: 'SmsLoginRequest.SmsCode' Error:Field validation for 'SmsCode' failed on the 'required' tag","func":"api.Login","file":"/Users/mac/project/mychat/backend/api/user_info_controller.go","line":35}
+{"level":"error","ts":"2025-08-18T16:37:13.915+0800","msg":"Key: 'SmsLoginRequest.SmsCode' Error:Field validation for 'SmsCode' failed on the 'required' tag","func":"api.Login","file":"/Users/mac/project/mychat/backend/api/user_info_controller.go","line":35}
+{"level":"error","ts":"2025-08-18T16:37:45.979+0800","msg":"Key: 'SmsLoginRequest.SmsCode' Error:Field validation for 'SmsCode' failed on the 'required' tag","func":"api.Login","file":"/Users/mac/project/mychat/backend/api/user_info_controller.go","line":35}
+{"level":"error","ts":"2025-08-18T16:41:49.013+0800","msg":"Key: 'SmsLoginRequest.SmsCode' Error:Field validation for 'SmsCode' failed on the 'required' tag","func":"api.Login","file":"/Users/mac/project/mychat/backend/api/user_info_controller.go","line":35}
+{"level":"error","ts":"2025-08-18T16:43:21.519+0800","msg":"Key: 'SmsLoginRequest.SmsCode' Error:Field validation for 'SmsCode' failed on the 'required' tag","func":"api.Login","file":"/Users/mac/project/mychat/backend/api/user_info_controller.go","line":35}
+{"level":"error","ts":"2025-08-18T16:46:33.268+0800","msg":"Key: 'SmsLoginRequest.SmsCode' Error:Field validation for 'SmsCode' failed on the 'required' tag","func":"api.Login","file":"/Users/mac/project/mychat/backend/api/user_info_controller.go","line":35}
+{"level":"info","ts":"2025-08-18T16:46:49.256+0800","msg":"Database connected and migrated successfully","func":"dao.init.0","file":"/Users/mac/project/mychat/backend/internal/dao/gorm.go","line":71}
+{"level":"info","ts":"2025-08-18T16:46:49.258+0800","msg":"=== MyChat Backend 服务器启动 ===","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":12}
+{"level":"info","ts":"2025-08-18T16:46:49.258+0800","msg":"1. 加载配置文件...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":15}
+{"level":"info","ts":"2025-08-18T16:46:49.258+0800","msg":"✅ 配置文件加载成功","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":19}
+{"level":"info","ts":"2025-08-18T16:46:49.258+0800","msg":"2. 初始化日志系统...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":22}
+{"level":"info","ts":"2025-08-18T16:46:49.258+0800","msg":"✅ 日志系统初始化成功","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":24}
+{"level":"info","ts":"2025-08-18T16:46:49.258+0800","msg":"3. 启动HTTP服务器...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":27}
+{"level":"info","ts":"2025-08-18T16:46:49.258+0800","msg":"🚀 服务器启动成功！监听地址: 0.0.0.0:8000","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-18T16:46:49.258+0800","msg":"📱 注册接口: POST http://0.0.0.0:8000/register","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-18T16:46:49.258+0800","msg":"🔐 登录接口: POST http://0.0.0.0:8000/login","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-18T16:46:49.258+0800","msg":"💡 提示: 使用Postman测试接口功能","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":35}
+{"level":"info","ts":"2025-08-18T16:46:49.258+0800","msg":"按 Ctrl+C 停止服务器","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":36}
+{"level":"fatal","ts":"2025-08-18T16:46:49.258+0800","msg":"服务器启动失败: listen tcp 0.0.0.0:8000: bind: address already in use","func":"zaplog.Fatalf","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":124}
+{"level":"info","ts":"2025-08-18T16:51:23.434+0800","msg":"Database connected and migrated successfully","func":"dao.init.0","file":"/Users/mac/project/mychat/backend/internal/dao/gorm.go","line":71}
+{"level":"info","ts":"2025-08-18T16:51:23.434+0800","msg":"=== MyChat Backend 服务器启动 ===","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":12}
+{"level":"info","ts":"2025-08-18T16:51:23.434+0800","msg":"1. 加载配置文件...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":15}
+{"level":"info","ts":"2025-08-18T16:51:23.435+0800","msg":"✅ 配置文件加载成功","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":19}
+{"level":"info","ts":"2025-08-18T16:51:23.435+0800","msg":"2. 初始化日志系统...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":22}
+{"level":"info","ts":"2025-08-18T16:51:23.435+0800","msg":"✅ 日志系统初始化成功","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":24}
+{"level":"info","ts":"2025-08-18T16:51:23.435+0800","msg":"3. 启动HTTP服务器...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":27}
+{"level":"info","ts":"2025-08-18T16:51:23.435+0800","msg":"🚀 服务器启动成功！监听地址: 0.0.0.0:8000","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-18T16:51:23.435+0800","msg":"📱 注册接口: POST http://0.0.0.0:8000/register","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-18T16:51:23.435+0800","msg":"🔐 登录接口: POST http://0.0.0.0:8000/login","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-18T16:51:23.435+0800","msg":"💡 提示: 使用Postman测试接口功能","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":35}
+{"level":"info","ts":"2025-08-18T16:51:23.435+0800","msg":"按 Ctrl+C 停止服务器","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":36}
+{"level":"info","ts":"2025-08-18T16:53:29.482+0800","msg":"Database connected and migrated successfully","func":"dao.init.0","file":"/Users/mac/project/mychat/backend/internal/dao/gorm.go","line":71}
+{"level":"info","ts":"2025-08-18T16:53:29.483+0800","msg":"=== MyChat Backend 服务器启动 ===","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":12}
+{"level":"info","ts":"2025-08-18T16:53:29.483+0800","msg":"1. 加载配置文件...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":15}
+{"level":"info","ts":"2025-08-18T16:53:29.483+0800","msg":"✅ 配置文件加载成功","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":19}
+{"level":"info","ts":"2025-08-18T16:53:29.483+0800","msg":"2. 初始化日志系统...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":22}
+{"level":"info","ts":"2025-08-18T16:53:29.483+0800","msg":"✅ 日志系统初始化成功","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":24}
+{"level":"info","ts":"2025-08-18T16:53:29.483+0800","msg":"3. 启动HTTP服务器...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":27}
+{"level":"info","ts":"2025-08-18T16:53:29.483+0800","msg":"🚀 服务器启动成功！监听地址: 0.0.0.0:8000","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-18T16:53:29.483+0800","msg":"📱 注册接口: POST http://0.0.0.0:8000/register","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-18T16:53:29.483+0800","msg":"🔐 登录接口: POST http://0.0.0.0:8000/login","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-18T16:53:29.483+0800","msg":"💡 提示: 使用Postman测试接口功能","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":35}
+{"level":"info","ts":"2025-08-18T16:53:29.483+0800","msg":"按 Ctrl+C 停止服务器","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":36}
+{"level":"info","ts":"2025-08-18T16:54:04.183+0800","msg":"Database connected and migrated successfully","func":"dao.init.0","file":"/Users/mac/project/mychat/backend/internal/dao/gorm.go","line":71}
+{"level":"info","ts":"2025-08-18T16:54:04.183+0800","msg":"=== MyChat Backend 服务器启动 ===","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":12}
+{"level":"info","ts":"2025-08-18T16:54:04.183+0800","msg":"1. 加载配置文件...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":15}
+{"level":"info","ts":"2025-08-18T16:54:04.183+0800","msg":"✅ 配置文件加载成功","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":19}
+{"level":"info","ts":"2025-08-18T16:54:04.184+0800","msg":"2. 初始化日志系统...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":22}
+{"level":"info","ts":"2025-08-18T16:54:04.184+0800","msg":"✅ 日志系统初始化成功","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":24}
+{"level":"info","ts":"2025-08-18T16:54:04.184+0800","msg":"3. 启动HTTP服务器...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":27}
+{"level":"info","ts":"2025-08-18T16:54:04.184+0800","msg":"🚀 服务器启动成功！监听地址: 0.0.0.0:8000","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-18T16:54:04.184+0800","msg":"📱 注册接口: POST http://0.0.0.0:8000/register","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-18T16:54:04.184+0800","msg":"🔐 登录接口: POST http://0.0.0.0:8000/login","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-18T16:54:04.184+0800","msg":"💡 提示: 使用Postman测试接口功能","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":35}
+{"level":"info","ts":"2025-08-18T16:54:04.184+0800","msg":"按 Ctrl+C 停止服务器","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":36}
+{"level":"fatal","ts":"2025-08-18T16:54:04.184+0800","msg":"服务器启动失败: listen tcp 0.0.0.0:8000: bind: address already in use","func":"zaplog.Fatalf","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":124}
+{"level":"info","ts":"2025-08-18T16:54:52.472+0800","msg":"Database connected and migrated successfully","func":"dao.init.0","file":"/Users/mac/project/mychat/backend/internal/dao/gorm.go","line":71}
+{"level":"info","ts":"2025-08-18T16:54:52.472+0800","msg":"=== MyChat Backend 服务器启动 ===","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":12}
+{"level":"info","ts":"2025-08-18T16:54:52.472+0800","msg":"1. 加载配置文件...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":15}
+{"level":"info","ts":"2025-08-18T16:54:52.472+0800","msg":"✅ 配置文件加载成功","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":19}
+{"level":"info","ts":"2025-08-18T16:54:52.472+0800","msg":"2. 初始化日志系统...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":22}
+{"level":"info","ts":"2025-08-18T16:54:52.472+0800","msg":"✅ 日志系统初始化成功","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":24}
+{"level":"info","ts":"2025-08-18T16:54:52.472+0800","msg":"3. 启动HTTP服务器...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":27}
+{"level":"info","ts":"2025-08-18T16:54:52.472+0800","msg":"🚀 服务器启动成功！监听地址: 0.0.0.0:8000","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-18T16:54:52.472+0800","msg":"📱 注册接口: POST http://0.0.0.0:8000/register","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-18T16:54:52.472+0800","msg":"🔐 登录接口: POST http://0.0.0.0:8000/login","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-18T16:54:52.472+0800","msg":"💡 提示: 使用Postman测试接口功能","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":35}
+{"level":"info","ts":"2025-08-18T16:54:52.472+0800","msg":"按 Ctrl+C 停止服务器","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":36}
+{"level":"fatal","ts":"2025-08-18T16:54:52.473+0800","msg":"服务器启动失败: listen tcp 0.0.0.0:8000: bind: address already in use","func":"zaplog.Fatalf","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":124}
+{"level":"info","ts":"2025-08-18T17:00:47.787+0800","msg":"Database connected and migrated successfully","func":"dao.init.0","file":"/Users/mac/project/mychat/backend/internal/dao/gorm.go","line":71}
+{"level":"info","ts":"2025-08-18T17:00:47.788+0800","msg":"=== MyChat Backend 服务器启动 ===","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":12}
+{"level":"info","ts":"2025-08-18T17:00:47.788+0800","msg":"1. 加载配置文件...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":15}
+{"level":"info","ts":"2025-08-18T17:00:47.788+0800","msg":"✅ 配置文件加载成功","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":19}
+{"level":"info","ts":"2025-08-18T17:00:47.788+0800","msg":"2. 初始化日志系统...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":22}
+{"level":"info","ts":"2025-08-18T17:00:47.788+0800","msg":"✅ 日志系统初始化成功","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":24}
+{"level":"info","ts":"2025-08-18T17:00:47.788+0800","msg":"3. 启动HTTP服务器...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":27}
+{"level":"info","ts":"2025-08-18T17:00:47.788+0800","msg":"🚀 服务器启动成功！监听地址: 0.0.0.0:8000","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-18T17:00:47.788+0800","msg":"📱 注册接口: POST http://0.0.0.0:8000/register","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-18T17:00:47.788+0800","msg":"🔐 登录接口: POST http://0.0.0.0:8000/login","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-18T17:00:47.788+0800","msg":"💡 提示: 使用Postman测试接口功能","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":35}
+{"level":"info","ts":"2025-08-18T17:00:47.788+0800","msg":"按 Ctrl+C 停止服务器","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":36}
+{"level":"fatal","ts":"2025-08-18T17:00:47.788+0800","msg":"服务器启动失败: listen tcp 0.0.0.0:8000: bind: address already in use","func":"zaplog.Fatalf","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":124}
+{"level":"info","ts":"2025-08-18T17:01:19.752+0800","msg":"Database connected and migrated successfully","func":"dao.init.0","file":"/Users/mac/project/mychat/backend/internal/dao/gorm.go","line":71}
+{"level":"info","ts":"2025-08-18T17:01:19.753+0800","msg":"=== MyChat Backend 服务器启动 ===","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":12}
+{"level":"info","ts":"2025-08-18T17:01:19.753+0800","msg":"1. 加载配置文件...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":15}
+{"level":"info","ts":"2025-08-18T17:01:19.753+0800","msg":"✅ 配置文件加载成功","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":19}
+{"level":"info","ts":"2025-08-18T17:01:19.753+0800","msg":"2. 初始化日志系统...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":22}
+{"level":"info","ts":"2025-08-18T17:01:19.753+0800","msg":"✅ 日志系统初始化成功","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":24}
+{"level":"info","ts":"2025-08-18T17:01:19.753+0800","msg":"3. 启动HTTP服务器...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":27}
+{"level":"info","ts":"2025-08-18T17:01:19.753+0800","msg":"🚀 服务器启动成功！监听地址: 0.0.0.0:8000","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-18T17:01:19.753+0800","msg":"📱 注册接口: POST http://0.0.0.0:8000/register","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-18T17:01:19.753+0800","msg":"🔐 登录接口: POST http://0.0.0.0:8000/login","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-18T17:01:19.753+0800","msg":"💡 提示: 使用Postman测试接口功能","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":35}
+{"level":"info","ts":"2025-08-18T17:01:19.753+0800","msg":"按 Ctrl+C 停止服务器","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":36}
+{"level":"fatal","ts":"2025-08-18T17:10:35.843+0800","msg":"Failed to auto migrate database: Error 1265 (01000): Data truncated for column 'password' at row 1","func":"zaplog.Fatalf","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":124}
+{"level":"fatal","ts":"2025-08-18T17:11:34.718+0800","msg":"Failed to auto migrate database: Error 1265 (01000): Data truncated for column 'password' at row 1","func":"zaplog.Fatalf","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":124}
+{"level":"info","ts":"2025-08-18T17:13:14.521+0800","msg":"Database connected and migrated successfully","func":"dao.init.0","file":"/Users/mac/project/mychat/backend/internal/dao/gorm.go","line":71}
+{"level":"info","ts":"2025-08-18T17:13:14.523+0800","msg":"=== MyChat Backend 服务器启动 ===","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":12}
+{"level":"info","ts":"2025-08-18T17:13:14.523+0800","msg":"1. 加载配置文件...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":15}
+{"level":"info","ts":"2025-08-18T17:13:14.524+0800","msg":"✅ 配置文件加载成功","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":19}
+{"level":"info","ts":"2025-08-18T17:13:14.524+0800","msg":"2. 初始化日志系统...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":22}
+{"level":"info","ts":"2025-08-18T17:13:14.524+0800","msg":"✅ 日志系统初始化成功","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":24}
+{"level":"info","ts":"2025-08-18T17:13:14.524+0800","msg":"3. 启动HTTP服务器...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":27}
+{"level":"info","ts":"2025-08-18T17:13:14.524+0800","msg":"🚀 服务器启动成功！监听地址: 0.0.0.0:8000","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-18T17:13:14.524+0800","msg":"📱 注册接口: POST http://0.0.0.0:8000/register","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-18T17:13:14.524+0800","msg":"🔐 登录接口: POST http://0.0.0.0:8000/login","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-18T17:13:14.524+0800","msg":"💡 提示: 使用Postman测试接口功能","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":35}
+{"level":"info","ts":"2025-08-18T17:13:14.524+0800","msg":"按 Ctrl+C 停止服务器","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":36}
+{"level":"info","ts":"2025-08-18T17:15:27.834+0800","msg":"Database connected and migrated successfully","func":"dao.init.0","file":"/Users/mac/project/mychat/backend/internal/dao/gorm.go","line":71}
+{"level":"info","ts":"2025-08-18T17:15:27.835+0800","msg":"=== MyChat Backend 服务器启动 ===","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":12}
+{"level":"info","ts":"2025-08-18T17:15:27.835+0800","msg":"1. 加载配置文件...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":15}
+{"level":"info","ts":"2025-08-18T17:15:27.835+0800","msg":"✅ 配置文件加载成功","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":19}
+{"level":"info","ts":"2025-08-18T17:15:27.835+0800","msg":"2. 初始化日志系统...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":22}
+{"level":"info","ts":"2025-08-18T17:15:27.835+0800","msg":"✅ 日志系统初始化成功","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":24}
+{"level":"info","ts":"2025-08-18T17:15:27.835+0800","msg":"3. 启动HTTP服务器...","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":27}
+{"level":"info","ts":"2025-08-18T17:15:27.835+0800","msg":"🚀 服务器启动成功！监听地址: 0.0.0.0:8000","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-18T17:15:27.835+0800","msg":"📱 注册接口: POST http://0.0.0.0:8000/register","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-18T17:15:27.835+0800","msg":"🔐 登录接口: POST http://0.0.0.0:8000/login","func":"zaplog.Infof","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":109}
+{"level":"info","ts":"2025-08-18T17:15:27.835+0800","msg":"💡 提示: 使用Postman测试接口功能","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":35}
+{"level":"info","ts":"2025-08-18T17:15:27.835+0800","msg":"按 Ctrl+C 停止服务器","func":"main.main","file":"/Users/mac/project/mychat/backend/cmd/main.go","line":36}
+{"level":"fatal","ts":"2025-08-18T17:15:27.836+0800","msg":"服务器启动失败: listen tcp 0.0.0.0:8000: bind: address already in use","func":"zaplog.Fatalf","file":"/Users/mac/project/mychat/backend/pkg/zaplog/logger.go","line":124}
+{"level":"error","ts":"2025-08-18T17:15:39.805+0800","msg":"手机号已存在","func":"api.Register","file":"/Users/mac/project/mychat/backend/api/user_info_controller.go","line":24}
