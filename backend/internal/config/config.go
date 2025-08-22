@@ -65,9 +65,7 @@ type Config struct {
 	MainConfig      `toml:"mainConfig"`
 	MysqlConfig     `toml:"mysqlConfig"`
 	RedisConfig     `toml:"redisConfig"`
-	AuthCodeConfig  `toml:"authCodeConfig"`
 	LogConfig       `toml:"logConfig"`
-	KafkaConfig     `toml:"kafkaConfig"`
 	StaticSrcConfig `toml:"staticSrcConfig"`
 }
 
