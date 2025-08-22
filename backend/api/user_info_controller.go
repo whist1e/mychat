@@ -2,8 +2,8 @@ package api
 
 import (
 	"mychat-backend/internal/dto/request"
-	"mychat-backend/internal/dto/respond"
 	"mychat-backend/pkg/zaplog"
+	"mychat-backend/pkg/constants"
 	"mychat-backend/service/gorm"
 	"net/http"
 
@@ -14,36 +14,55 @@ func Register(c *gin.Context) {
 	var req request.RegisterRequest
 	if err := c.ShouldBindJSON(&req); err != nil {
 		zaplog.Error(err.Error())
-		c.JSON(http.StatusOK, respond.BadRequestResponse("参数绑定失败"))
+		c.JSON(http.StatusOK, gin.H{
+			"code": 500,
+			"message": constants.SYSTEM_ERROR,
+		})
 		return
 	}
 
-	service := gorm.NewUserInfoService()
-	message, userInfo, err := service.Register(req)
-	if err != nil {
-		zaplog.Error(err.Error())
-		c.JSON(http.StatusOK, respond.ErrorResponse(500, "注册失败", err.Error()))
-		return
-	}
-
-	c.JSON(http.StatusOK, respond.SuccessResponse(userInfo, message))
+	message, userInfo, ret := gorm.UserInfoService.Register(req)
+	JsonBack(c, message, ret, userInfo)	
 }
 
+//当前没有加短信验证功能，只能通过密码登录
 func Login(c *gin.Context) {
 	var req request.LoginRequest
 	if err := c.ShouldBindJSON(&req); err != nil {
 		zaplog.Error(err.Error())
-		c.JSON(http.StatusOK, respond.BadRequestResponse("参数绑定失败"))
+		c.JSON(http.StatusOK, gin.H{
+			"code": 500,
+			"message": constants.SYSTEM_ERROR,
+		})
 		return
 	}
 
-	service := gorm.NewUserInfoService()
-	message, userInfo, err := service.Login(req)
-	if err != nil {
+	message, userInfo, ret := gorm.UserInfoService.PasswordLogin(req.Telephone, req.Password)
+	JsonBack(c, message, ret, userInfo)
+}
+
+func UpdateUserInfo(c *gin.Context) {
+	var req request.GetUserInfo
+	if err := c.ShouldBindJSON(&req); err != nil {
 		zaplog.Error(err.Error())
-		c.JSON(http.StatusOK, respond.ErrorResponse(500, "登录失败", err.Error()))
+		c.JSON(http.StatusOK, gin.H{
+			"code": 500,
+			"message": constants.SYSTEM_ERROR,
+		})
 		return
 	}
+}
 
-	c.JSON(http.StatusOK, respond.SuccessResponse(userInfo, message))
+func GetUserInfoList(c *gin.Context) {
+	var req request.GetUserInfo
+	if err := c.ShouldBindJSON(&req); err != nil {
+		zaplog.Error(err.Error())
+		c.JSON(http.StatusOK, gin.H{
+			"code": 500,
+			"message": constants.SYSTEM_ERROR,
+		})
+		return
+	}
+	message, userInfo, ret := gorm.UserInfoService.GetUserInfo(req.Uuid)
+	JsonBack(c, message, ret, userInfo)
 }

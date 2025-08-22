@@ -33,17 +33,21 @@ func init() {
 	port := conf.MysqlConfig.Port                 // 数据库端口
 	databaseName := conf.MysqlConfig.DatabaseName // 数据库名称
 
-	// 构建数据库连接字符串(DSN)
-	// 参数说明：
-	// - charset=utf8mb4: 支持完整的UTF-8字符集，包括emoji
-	// - parseTime=True: 自动解析时间类型
-	// - loc=Local: 使用本地时区
+	// 构建MySQL数据库连接字符串（DSN）
+	// 其中：
+	//   - %s:%s 表示用户名:密码
+	//   - @tcp(%s:%d) 表示连接到主机:端口
+	//   - /%s 表示数据库名
+	//   - charset=utf8mb4 支持完整UTF-8字符集（含emoji）
+	//   - parseTime=True 自动解析MySQL的时间类型为Go的time.Time
+	//   - loc=Local 使用本地时区
+	// dsn最终格式示例: "root:password@tcp(127.0.0.1:3306)/mychat?charset=utf8mb4&parseTime=True&loc=Local"
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=True&loc=Local",
 		user, password, host, port, databaseName)
 
 	var err error
 	// 使用GORM连接MySQL数据库
-	// mysql.Open(dsn): 创建MySQL驱动连接
+	// mysql.Open(dsn): 返回带有dsn配置的驱动
 	// &gorm.Config{}: 使用默认GORM配置
 	GormDB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {

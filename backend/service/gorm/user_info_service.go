@@ -1,38 +1,36 @@
 package gorm
 
 import (
+	"fmt"
 	"crypto/md5"
 	"database/sql"
-	"fmt"
 	"mychat-backend/internal/dao"
 	"mychat-backend/internal/dto/request"
 	"mychat-backend/internal/dto/respond"
 	"mychat-backend/internal/model"
+	"mychat-backend/pkg/constants"
+	"mychat-backend/pkg/zaplog"
 	"time"
 
 	"gorm.io/gorm"
 )
 
-type UserInfoService struct {
-}
+type userInfoService struct{}
 
-// NewUserInfoService 创建用户信息服务实例
-func NewUserInfoService() *UserInfoService {
-	return &UserInfoService{}
-}
+var UserInfoService = new(userInfoService)
 
 // Register 用户注册
 // 参数：注册请求信息
 // 返回：成功消息、用户信息、错误信息
-func (s *UserInfoService) Register(req request.RegisterRequest) (message string, userInfo respond.UserInfoResponse, err error) {
+func (s *userInfoService) Register(req request.RegisterRequest) (string, *respond.RegisterRespond, int) {
 	// 1. 检查手机号是否已存在
 	var existingUser model.UserInfo
-	err = dao.GormDB.Where("telephone = ?", req.Telephone).First(&existingUser).Error
+	err := dao.GormDB.Where("telephone = ?", req.Telephone).First(&existingUser).Error
 	if err != nil && err != gorm.ErrRecordNotFound {
-		return "", respond.UserInfoResponse{}, fmt.Errorf("查询用户失败: %v", err)
+		return constants.SYSTEM_ERROR, nil, -2
 	}
 	if err == nil {
-		return "", respond.UserInfoResponse{}, fmt.Errorf("手机号已存在")
+		return "手机号已存在", nil, -2
 	}
 
 	// 2. 创建新用户
@@ -50,13 +48,12 @@ func (s *UserInfoService) Register(req request.RegisterRequest) (message string,
 
 	// 3. 保存到数据库
 	if err := dao.GormDB.Create(newUser).Error; err != nil {
-		return "", respond.UserInfoResponse{}, fmt.Errorf("创建用户失败: %v", err)
+		return constants.SYSTEM_ERROR, nil, -1
 	}
 
 	// 4. 转换为响应格式
-	userInfo = respond.UserInfoResponse{
-		ID:           uint(newUser.Id),
-		UUID:         newUser.Uuid,
+	userInfo := respond.RegisterRespond{
+		Uuid:         newUser.Uuid,
 		Nickname:     newUser.Nickname,
 		Telephone:    newUser.Telephone,
 		Email:        newUser.Email,
@@ -64,47 +61,46 @@ func (s *UserInfoService) Register(req request.RegisterRequest) (message string,
 		Gender:       newUser.Gender,
 		Signature:    newUser.Signature,
 		Birthday:     newUser.Birthday,
-		CreatedAt:    newUser.CreatedAt,
-		LastOnlineAt: newUser.LastOnlineAt.Time,
-		Status:       newUser.Status,
+		CreatedAt: newUser.CreatedAt.Format("2006-01-02 15:04:05"),
+		IsAdmin:   newUser.IsAdmin,
+		Status:    newUser.Status,
 	}
 
-	return "注册成功", userInfo, nil
+	return "注册成功", &userInfo, 0
 }
 
 // Login 用户登录（密码登录）
 // 参数：登录请求信息
 // 返回：成功消息、用户信息、错误信息
-func (s *UserInfoService) Login(req request.LoginRequest) (message string, userInfo respond.UserInfoResponse, err error) {
+func (s *userInfoService) Login(req request.LoginRequest) (string, *respond.LoginRespond, int) {
 	// 1. 根据手机号查找用户
 	var user model.UserInfo
 	if err := dao.GormDB.Where("telephone = ?", req.Telephone).First(&user).Error; err != nil {
 		if err == gorm.ErrRecordNotFound {
-			return "", respond.UserInfoResponse{}, fmt.Errorf("用户不存在")
+			return constants.SYSTEM_ERROR, nil, -2
 		}
-		return "", respond.UserInfoResponse{}, fmt.Errorf("查询用户失败: %v", err)
+		return constants.SYSTEM_ERROR, nil, -2
 	}
 
 	// 2. 检查用户状态
 	if user.Status != 0 {
-		return "", respond.UserInfoResponse{}, fmt.Errorf("用户已被禁用")
+		return "用户已被禁用", nil, -2
 	}
 
 	// 3. 验证密码
 	if !verifyPassword(req.Password, user.Password) {
-		return "", respond.UserInfoResponse{}, fmt.Errorf("密码错误")
+		return "密码错误", nil, -2
 	}
 
 	// 4. 更新最后在线时间
 	if err := dao.GormDB.Model(&user).Update("last_online_at", time.Now()).Error; err != nil {
 		// 记录错误但不影响登录
-		fmt.Printf("更新最后在线时间失败: %v\n", err)
+		zaplog.Error(err.Error())
 	}
 
 	// 5. 转换为响应格式
-	userInfo = respond.UserInfoResponse{
-		ID:           uint(user.Id),
-		UUID:         user.Uuid,
+	userInfo := respond.LoginRespond{
+		Uuid:         user.Uuid,
 		Nickname:     user.Nickname,
 		Telephone:    user.Telephone,
 		Email:        user.Email,
@@ -112,46 +108,45 @@ func (s *UserInfoService) Login(req request.LoginRequest) (message string, userI
 		Gender:       user.Gender,
 		Signature:    user.Signature,
 		Birthday:     user.Birthday,
-		CreatedAt:    user.CreatedAt,
-		LastOnlineAt: user.LastOnlineAt.Time,
-		Status:       user.Status,
+		CreatedAt: user.CreatedAt.Format("2006-01-02 15:04:05"),
+		IsAdmin:   user.IsAdmin,
+		Status:    user.Status,
 	}
 
-	return "登录成功", userInfo, nil
+	return "登录成功", &userInfo, 0
 }
 
 // PasswordLogin 密码登录（新增方法）
 // 参数：手机号和密码
 // 返回：成功消息、用户信息、错误信息
-func (s *UserInfoService) PasswordLogin(telephone, password string) (message string, userInfo respond.UserInfoResponse, err error) {
+func (s *userInfoService) PasswordLogin(telephone, password string) (string, *respond.LoginRespond, int) {
 	// 1. 根据手机号查找用户
 	var user model.UserInfo
 	if err := dao.GormDB.Where("telephone = ?", telephone).First(&user).Error; err != nil {
 		if err == gorm.ErrRecordNotFound {
-			return "", respond.UserInfoResponse{}, fmt.Errorf("用户不存在")
+			return "用户不存在", nil, -2
 		}
-		return "", respond.UserInfoResponse{}, fmt.Errorf("查询用户失败: %v", err)
+		return constants.SYSTEM_ERROR, nil, -2
 	}
 
 	// 2. 检查用户状态
 	if user.Status != 0 {
-		return "", respond.UserInfoResponse{}, fmt.Errorf("用户已被禁用")
+		return "用户已被禁用", nil, -2
 	}
 
 	// 3. 验证密码
 	if !verifyPassword(password, user.Password) {
-		return "", respond.UserInfoResponse{}, fmt.Errorf("密码错误")
+		return "密码错误", nil, -2
 	}
 
 	// 4. 更新最后在线时间
 	if err := dao.GormDB.Model(&user).Update("last_online_at", time.Now()).Error; err != nil {
-		fmt.Printf("更新最后在线时间失败: %v\n", err)
+		zaplog.Error(err.Error())
 	}
 
 	// 5. 转换为响应格式
-	userInfo = respond.UserInfoResponse{
-		ID:           uint(user.Id),
-		UUID:         user.Uuid,
+	userInfo := respond.LoginRespond{
+		Uuid:         user.Uuid,
 		Nickname:     user.Nickname,
 		Telephone:    user.Telephone,
 		Email:        user.Email,
@@ -159,12 +154,38 @@ func (s *UserInfoService) PasswordLogin(telephone, password string) (message str
 		Gender:       user.Gender,
 		Signature:    user.Signature,
 		Birthday:     user.Birthday,
-		CreatedAt:    user.CreatedAt,
-		LastOnlineAt: user.LastOnlineAt.Time,
-		Status:       user.Status,
+		CreatedAt: user.CreatedAt.Format("2006-01-02 15:04:05"),
+		IsAdmin:   user.IsAdmin,
+		Status:    user.Status,
 	}
 
-	return "登录成功", userInfo, nil
+	return "登录成功", &userInfo, 0
+}
+
+func (s *userInfoService) UpdateUserInfo(req request.GetUserInfo) (string, *respond.GetUserInfoRespond, int) {
+	return "更新用户信息成功", nil, 0
+}
+
+func (s *userInfoService) GetUserInfo(uuid string) (string, *respond.GetUserInfoRespond, int) {
+	var userInfo model.UserInfo
+	if res := dao.GormDB.Where("uuid = ?", uuid).Find(&userInfo); res.Error != nil {
+		zaplog.Error(res.Error.Error())
+		return constants.SYSTEM_ERROR, nil, -1
+	}
+	rsp := respond.GetUserInfoRespond{
+		Uuid:      userInfo.Uuid,
+		Nickname:  userInfo.Nickname,
+		Telephone: userInfo.Telephone,
+		Avatar:    userInfo.Avatar,
+		Email:     userInfo.Email,
+		Gender:    userInfo.Gender,
+		Birthday:  userInfo.Birthday,
+		Signature: userInfo.Signature,
+		CreatedAt: userInfo.CreatedAt.Format("2006-01-02 15:04:05"),
+		IsAdmin:   userInfo.IsAdmin,
+		Status:    userInfo.Status,
+	}
+	return "获取用户信息成功", &rsp, 0
 }
 
 // 工具函数

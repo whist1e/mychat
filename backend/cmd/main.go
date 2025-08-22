@@ -30,10 +30,8 @@ func main() {
 	serverAddr := conf.MainConfig.Host + ":" + strconv.Itoa(conf.MainConfig.Port)
 
 	zaplog.Infof("🚀 服务器启动成功！监听地址: %s", serverAddr)
-	zaplog.Infof("📱 注册接口: POST http://%s/register", serverAddr)
-	zaplog.Infof("🔐 登录接口: POST http://%s/login", serverAddr)
-	zaplog.Info("💡 提示: 使用Postman测试接口功能")
-	zaplog.Info("按 Ctrl+C 停止服务器")
+	zaplog.Infof("📱 注册接口: POST http://%s/user/register", serverAddr)
+	zaplog.Infof("🔐 登录接口: POST http://%s/user/login", serverAddr)
 
 	// 启动服务器
 	if err := http.ListenAndServe(serverAddr, https_server.GE); err != nil {
