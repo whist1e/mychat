@@ -2,7 +2,6 @@ package config
 
 import (
 	"log"
-	"time"
 
 	"github.com/BurntSushi/toml"
 )
@@ -28,13 +27,6 @@ type RedisConfig struct {
 	Db       int    `toml:"db"`
 }
 
-type AuthCodeConfig struct {
-	AccessKeyID     string `toml:"accessKeyID"`
-	AccessKeySecret string `toml:"accessKeySecret"`
-	SignName        string `toml:"signName"`
-	TemplateCode    string `toml:"templateCode"`
-}
-
 type LogConfig struct {
 	LogPath    string `toml:"logPath"`
 	Level      string `toml:"level"`
@@ -46,27 +38,11 @@ type LogConfig struct {
 	Console    bool   `toml:"console"`
 }
 
-type KafkaConfig struct {
-	MessageMode string        `toml:"messageMode"`
-	HostPort    string        `toml:"hostPort"`
-	LoginTopic  string        `toml:"loginTopic"`
-	LogoutTopic string        `toml:"logoutTopic"`
-	ChatTopic   string        `toml:"chatTopic"`
-	Partition   int           `toml:"partition"`
-	Timeout     time.Duration `toml:"timeout"`
-}
-
-type StaticSrcConfig struct {
-	StaticAvatarPath string `toml:"staticAvatarPath"`
-	StaticFilePath   string `toml:"staticFilePath"`
-}
-
 type Config struct {
-	MainConfig      `toml:"mainConfig"`
-	MysqlConfig     `toml:"mysqlConfig"`
-	RedisConfig     `toml:"redisConfig"`
-	LogConfig       `toml:"logConfig"`
-	StaticSrcConfig `toml:"staticSrcConfig"`
+	MainConfig  `toml:"mainConfig"`
+	MysqlConfig `toml:"mysqlConfig"`
+	RedisConfig `toml:"redisConfig"`
+	LogConfig   `toml:"logConfig"`
 }
 
 var config *Config

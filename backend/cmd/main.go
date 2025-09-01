@@ -9,8 +9,6 @@ import (
 )
 
 func main() {
-	zaplog.Info("=== MyChat Backend 服务器启动 ===")
-
 	// 1. 加载配置文件
 	zaplog.Info("1. 加载配置文件...")
 	if err := config.LoadConfig(); err != nil {

@@ -22,6 +22,10 @@ func init() {
 	// API路由
 	GE.POST("/user/login", api.Login)
 	GE.POST("/user/register", api.Register)
+	GE.POST("/user/getUserInfo", api.GetUserInfo)
 	GE.POST("/user/updateUserInfo", api.UpdateUserInfo)
-	GE.POST("/user/getUserInfoList", api.GetUserInfoList)
+
+	GE.POST("/contact/getUserList", api.GetUserList)
+
+	GE.POST("/session/openSession", api.OpenSession)
 }

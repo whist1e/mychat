@@ -4,9 +4,8 @@ import (
 	"mychat-backend/internal/dto/request"
 	"mychat-backend/pkg/zaplog"
 	"mychat-backend/pkg/constants"
-	"mychat-backend/service/gorm"
+	"mychat-backend/internal/service/gorm"
 	"net/http"
-
 	"github.com/gin-gonic/gin"
 )
 
@@ -41,19 +40,7 @@ func Login(c *gin.Context) {
 	JsonBack(c, message, ret, userInfo)
 }
 
-func UpdateUserInfo(c *gin.Context) {
-	var req request.GetUserInfo
-	if err := c.ShouldBindJSON(&req); err != nil {
-		zaplog.Error(err.Error())
-		c.JSON(http.StatusOK, gin.H{
-			"code": 500,
-			"message": constants.SYSTEM_ERROR,
-		})
-		return
-	}
-}
-
-func GetUserInfoList(c *gin.Context) {
+func GetUserInfo(c *gin.Context){
 	var req request.GetUserInfo
 	if err := c.ShouldBindJSON(&req); err != nil {
 		zaplog.Error(err.Error())
@@ -65,4 +52,18 @@ func GetUserInfoList(c *gin.Context) {
 	}
 	message, userInfo, ret := gorm.UserInfoService.GetUserInfo(req.Uuid)
 	JsonBack(c, message, ret, userInfo)
+}
+
+func UpdateUserInfo(c *gin.Context) {
+	var req request.UpdateUserInfoRequest
+	if err := c.ShouldBindJSON(&req); err != nil {
+		zaplog.Error(err.Error())
+		c.JSON(http.StatusOK, gin.H{
+			"code": 500,
+			"message": constants.SYSTEM_ERROR,
+		})
+		return
+	}
+	message, ret := gorm.UserInfoService.UpdateUserInfo(&req)
+	JsonBack(c, message, ret, nil)
 }

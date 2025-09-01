@@ -8,7 +8,6 @@ import (
 	"mychat-backend/internal/config"
 	"mychat-backend/internal/model"
 	"mychat-backend/pkg/zaplog"
-
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
@@ -59,12 +58,7 @@ func init() {
 	// AutoMigrate会自动创建不存在的表，并更新表结构以匹配模型定义
 	// 这是GORM的一个强大功能，可以自动管理数据库schema
 	err = GormDB.AutoMigrate(
-		&model.UserInfo{},     // 用户信息表
-		&model.GroupInfo{},    // 群组信息表
-		&model.UserContact{},  // 用户联系人表
-		&model.Session{},      // 会话表
-		&model.ContactApply{}, // 联系人申请表
-		&model.Message{},      // 消息表
+		&model.UserInfo{}, // 用户信息表
 	)
 	if err != nil {
 		// 迁移失败时记录错误日志并终止程序
